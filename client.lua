@@ -1,3 +1,19 @@
+RegisterNetEvent('qb-ui:ShowUI')
+AddEventHandler('qb-ui:ShowUI', function(action, text)
+	SendNUIMessage({
+        type = "open",
+        text = text,
+        color = type,
+    })
+end)
+
+RegisterNetEvent('qb-ui:HideUI')
+AddEventHandler('qb-ui:HideUI', function()
+	SendNUIMessage({
+		type = "close",
+	})
+end)
+
 function showInteraction(text , type)
     SendNUIMessage({
         type = "open",
@@ -11,20 +27,4 @@ function hideInteraction()
         type = "close",
     })
 end
-
-RegisterNetEvent('qb-ui:ShowUI')
-AddEventHandler('cd_drawtextui:ShowUI', function(action, text)
-	SendNUIMessage({
-        type = "open",
-        text = text,
-        color = type,
-    })
-end)
-
-RegisterNetEvent('cd_drawtextui:HideUI')
-AddEventHandler('cd_drawtextui:HideUI', function()
-	SendNUIMessage({
-		type = "close",
-	})
-end)
 
